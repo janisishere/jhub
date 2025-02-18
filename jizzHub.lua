@@ -698,23 +698,55 @@ local script = G2L["3"];
 	end
 	
 	function execute(checkGame, expName, subName)
-		if expName and subName then
-			for pageName, pageData in pairs(Data) do
-				local subData = pageData.SubCategories[subName]
-				if subData then
-					local scriptData = subData.Scripts[expName]
-					if scriptData then
-						if checkGame == true then
-							local id = game.GameId
-							if id == subData.GameId then
-								loadScript(scriptData.URL)
-							else
-								warn("This script is not for the current game!")
+		if expName then
+			-- Check if it's from Page4 (All Scripts)
+			if getOpenPage().Name == "Page4" then
+				local scriptData = Data.Page4.Scripts[expName]
+				if scriptData then
+					-- Get original subName from Page4 data
+					subName = scriptData.SubName
+					-- Find the original script data from other pages
+					for _, pageData in pairs(Data) do
+						if pageData.SubCategories and pageData.SubCategories[subName] then
+							local originalScriptData = pageData.SubCategories[subName].Scripts[expName]
+							if originalScriptData then
+								-- Execute script
+								if originalScriptData.checkGame then
+									local id = game.GameId
+									if id == pageData.SubCategories[subName].GameId then
+										loadScript(originalScriptData.URL)
+									else
+										warn("This script is not for the current game!")
+									end
+								else
+									loadScript(originalScriptData.URL)
+								end
+								return
 							end
-						else
-							loadScript(scriptData.URL)
 						end
-						return
+					end
+				end
+			else
+				-- Existing behavior for other pages
+				for pageName, pageData in pairs(Data) do
+					if pageData.SubCategories then
+						local subData = pageData.SubCategories[subName]
+						if subData then
+							local scriptData = subData.Scripts[expName]
+							if scriptData then
+								if checkGame == true then
+									local id = game.GameId
+									if id == subData.GameId then
+										loadScript(scriptData.URL)
+									else
+										warn("This script is not for the current game!")
+									end
+								else
+									loadScript(scriptData.URL)
+								end
+								return
+							end
+						end
 					end
 				end
 			end
@@ -904,6 +936,25 @@ local script = G2L["3"];
 			end
 		end
 	end
+	
+	-- Collect all scripts for Page4 (All Scripts)
+	for _, pageData in pairs(Data) do
+		if pageData.SubCategories then
+			for subName, subData in pairs(pageData.SubCategories) do
+				for scriptName, scriptData in pairs(subData.Scripts) do
+					Data.Page4.Scripts[scriptName] = {
+						LayoutOrder = scriptData.LayoutOrder,
+						Name = scriptData.Name,
+						URL = scriptData.URL,
+						Image = scriptData.Image,
+						checkGame = scriptData.checkGame,
+						SubName = subName -- Track the subcategory
+					}
+				end
+			end
+		end
+	end
+	
 	
 	collectAllScripts()
 	createFrames()
