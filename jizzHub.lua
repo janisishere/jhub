@@ -506,7 +506,7 @@ local script = G2L["3"];
 						ImageColor3 = Color3.new(0,0,0),
 						ImageTransparency = .5,
 					},
-					GameId = 16732694052,
+					GameId = 5750914919,
 					Scripts = {
 						SpeedHubX = {
 							LayoutOrder = 1,
@@ -563,7 +563,7 @@ local script = G2L["3"];
 						ImageColor3 = Color3.new(1,1,1),
 						ImageTransparency = .5,
 					},
-					GameId = 17590362521,
+					GameId = 6022371481,
 					Scripts = {
 						PLAdmin = {
 							LayoutOrder = 1,
