@@ -573,7 +573,7 @@ local script = G2L["3"];
 						ImageColor3 = Color3.new(1,1,1),
 						ImageTransparency = .5,
 					},
-					GameId = 15532962292,
+					GameId = 5361032378,
 					Scripts = {
 						rngHUB = {
 							LayoutOrder = 1,
