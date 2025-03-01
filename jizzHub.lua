@@ -1,12 +1,3 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-]=]
-
 -- Instances: 47 | Scripts: 2 | Modules: 0 | Tags: 0
 local G2L = {};
 
@@ -506,7 +497,7 @@ local script = G2L["3"];
 						ImageColor3 = Color3.new(0,0,0),
 						ImageTransparency = .5,
 					},
-					GameId = 5750914919,
+					GameId = 16732694052,
 					Scripts = {
 						SpeedHubX = {
 							LayoutOrder = 1,
@@ -563,12 +554,31 @@ local script = G2L["3"];
 						ImageColor3 = Color3.new(1,1,1),
 						ImageTransparency = .5,
 					},
-					GameId = 6022371481,
+					GameId = 17590362521,
 					Scripts = {
 						PLAdmin = {
 							LayoutOrder = 1,
 							Name = "Herkle Hub",
 							URL = "https://raw.githubusercontent.com/decryp1/Spelling-Bee-Script/refs/heads/main/spelling%20bee%20script",
+							Image = Defaults.ScriptImg,
+							checkGame = true,
+						}
+					},
+				},	
+				["Sol's RNG"] = {
+					LayoutOrder = 5,
+					Image = {
+						Id = "rbxassetid://17312152398",
+						Rotation = 0,
+						ImageColor3 = Color3.new(1,1,1),
+						ImageTransparency = .5,
+					},
+					GameId = 15532962292,
+					Scripts = {
+						rngHUB = {
+							LayoutOrder = 1,
+							Name = "rngHUB (jHUB)",
+							URL = "https://raw.githubusercontent.com/janisishere/jhub/main/rngHUB_solsrng.lua",
 							Image = Defaults.ScriptImg,
 							checkGame = true,
 						}
