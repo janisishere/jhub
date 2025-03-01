@@ -594,7 +594,6 @@ local script = G2L["3"];
 	local TweenService = game:GetService("TweenService")
 	local frame = script.Parent
 	local sframe = frame.ScrollingFrame
-	local back = frame.Back
 	
 	local dragging
 	local dragInput
