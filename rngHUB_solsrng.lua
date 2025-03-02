@@ -589,6 +589,8 @@ G2L["3d"]["Name"] = [[Framework]];
 local function C_3()
 local script = G2L["3"];
 	_G.rngHubEnabled = true
+
+	print("Launching rngHUB V0.1, Bugfix2")
 	
 	local UIS = game:GetService("UserInputService")
 	local TweenService = game:GetService("TweenService")
