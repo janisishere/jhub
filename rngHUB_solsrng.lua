@@ -715,7 +715,7 @@ local script = G2L["3"];
 			for _, clover in map:GetChildren() do
 				if clover:IsA("Model") and clover:FindFirstChild("Color") and clover:FindFirstChild("Body") then
 					if _G.solsrng_rnghub_highlightClovers == true then
-						if not clover:FindFirstChild("Highlight") then
+						if not clover:FindFirstChild("Highlight") and not clover:FindFirstChildOfClass("Highlight") then
 							local hg = Instance.new("Highlight", clover)
 							hg.FillColor = Color3.new(0, 1, 0)
 							hg.OutlineColor = Color3.new(0, 1, 0)
@@ -731,7 +731,7 @@ local script = G2L["3"];
 			for _, potion in map:GetChildren() do
 				if potion:IsA("Model") and potion:FindFirstChild("ProximityPrompt") and potion:FindFirstChild("Liquid") then
 					if _G.solsrng_rnghub_highlightPotions == true then
-						if not potion:FindFirstChild("Highlight") then
+						if not potion:FindFirstChild("Highlight") and not clover:FindFirstChildOfClass("Highlight") then
 							local hg = Instance.new("Highlight", potion)
 							hg.FillColor = potion.Liquid.Color
 							hg.OutlineColor = potion.Liquid.Color
@@ -748,7 +748,7 @@ local script = G2L["3"];
 			for _, coin in map:GetChildren() do
 				if coin:IsA("Model") and coin:FindFirstChild("ProximityPrompt") and coin:FindFirstChild("Coin") then
 					if _G.solsrng_rnghub_highlightCoins == true then
-						if not coin:FindFirstChild("Highlight") then
+						if not coin:FindFirstChild("Highlight") and not clover:FindFirstChildOfClass("Highlight") then
 							local hg = Instance.new("Highlight", coin)
 							hg.FillColor = coin.Coin.Color
 							hg.OutlineColor = coin.Coin.Color
