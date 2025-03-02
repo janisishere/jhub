@@ -715,13 +715,13 @@ local script = G2L["3"];
 			for _, clover in map:GetChildren() do
 				if clover:IsA("Model") and clover:FindFirstChild("Color") and clover:FindFirstChild("Body") then
 					if _G.solsrng_rnghub_highlightClovers == true then
-						if clover:FindFirstChild("Highlight") ~= true then
+						if not clover:FindFirstChild("Highlight") then
 							local hg = Instance.new("Highlight", clover)
 							hg.FillColor = Color3.new(0, 1, 0)
 							hg.OutlineColor = Color3.new(0, 1, 0)
 						end
 					else
-						if clover:FindFirstChild("Highlight") == true then
+						if clover:FindFirstChild("Highlight") then
 							clover.Highlight:Destroy()
 						end
 					end
@@ -731,13 +731,13 @@ local script = G2L["3"];
 			for _, potion in map:GetChildren() do
 				if potion:IsA("Model") and potion:FindFirstChild("ProximityPrompt") and potion:FindFirstChild("Liquid") then
 					if _G.solsrng_rnghub_highlightPotions == true then
-						if potion:FindFirstChild("Highlight") ~= true then
+						if not potion:FindFirstChild("Highlight") then
 							local hg = Instance.new("Highlight", potion)
 							hg.FillColor = potion.Liquid.Color
 							hg.OutlineColor = potion.Liquid.Color
 						end
 					else
-						if potion:FindFirstChild("Highlight") == true then
+						if potion:FindFirstChild("Highlight") then
 							potion.Highlight:Destroy()
 						end
 					end
@@ -748,13 +748,13 @@ local script = G2L["3"];
 			for _, coin in map:GetChildren() do
 				if coin:IsA("Model") and coin:FindFirstChild("ProximityPrompt") and coin:FindFirstChild("Coin") then
 					if _G.solsrng_rnghub_highlightCoins == true then
-						if coin:FindFirstChild("Highlight") ~= true then
+						if not coin:FindFirstChild("Highlight") then
 							local hg = Instance.new("Highlight", coin)
 							hg.FillColor = coin.Coin.Color
 							hg.OutlineColor = coin.Coin.Color
 						end
 					else
-						if coin:FindFirstChild("Highlight") == true then
+						if coin:FindFirstChild("Highlight") then
 							coin.Highlight:Destroy()
 						end
 					end
