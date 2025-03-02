@@ -590,7 +590,7 @@ local function C_3()
 local script = G2L["3"];
 	_G.rngHubEnabled = true
 
-	print("Launching rngHUB V0.1, Bugfix2")
+	print("Launching rngHUB V0.1, Bugfix3")
 	
 	local UIS = game:GetService("UserInputService")
 	local TweenService = game:GetService("TweenService")
@@ -717,15 +717,15 @@ local script = G2L["3"];
 			for _, clover in map:GetChildren() do
 				if clover:IsA("Model") and clover:FindFirstChild("Color") and clover:FindFirstChild("Body") then
 					if _G.solsrng_rnghub_highlightClovers == true then
-						if not clover:FindFirstChild("Highlight") and not clover:FindFirstChildOfClass("Highlight") then
-							local hg = Instance.new("Highlight", clover)
-							hg.FillColor = Color3.new(0, 1, 0)
-							hg.OutlineColor = Color3.new(0, 1, 0)
-						end
+					    if not clover:FindFirstChildOfClass("Highlight") then
+					        local hg = Instance.new("Highlight", clover)
+					        hg.FillColor = Color3.new(0, 1, 0)
+					        hg.OutlineColor = Color3.new(0, 1, 0)
+					    end
 					else
-						if clover:FindFirstChild("Highlight") then
-							clover.Highlight:Destroy()
-						end
+					    if clover:FindFirstChildOfClass("Highlight") then
+					        clover:FindFirstChildOfClass("Highlight"):Destroy()
+					    end
 					end
 				end
 			end
@@ -733,15 +733,15 @@ local script = G2L["3"];
 			for _, potion in map:GetChildren() do
 				if potion:IsA("Model") and potion:FindFirstChild("ProximityPrompt") and potion:FindFirstChild("Liquid") then
 					if _G.solsrng_rnghub_highlightPotions == true then
-						if not potion:FindFirstChild("Highlight") and not clover:FindFirstChildOfClass("Highlight") then
-							local hg = Instance.new("Highlight", potion)
-							hg.FillColor = potion.Liquid.Color
-							hg.OutlineColor = potion.Liquid.Color
-						end
+					    if not potion:FindFirstChildOfClass("Highlight") then
+					        local hg = Instance.new("Highlight", potion)
+					        hg.FillColor = potion.Liquid.Color
+					        hg.OutlineColor = potion.Liquid.Color
+					    end
 					else
-						if potion:FindFirstChild("Highlight") then
-							potion.Highlight:Destroy()
-						end
+					    if potion:FindFirstChildOfClass("Highlight") then
+					        potion:FindFirstChildOfClass("Highlight"):Destroy()
+					    end
 					end
 				end
 			end
@@ -750,15 +750,15 @@ local script = G2L["3"];
 			for _, coin in map:GetChildren() do
 				if coin:IsA("Model") and coin:FindFirstChild("ProximityPrompt") and coin:FindFirstChild("Coin") then
 					if _G.solsrng_rnghub_highlightCoins == true then
-						if not coin:FindFirstChild("Highlight") and not clover:FindFirstChildOfClass("Highlight") then
-							local hg = Instance.new("Highlight", coin)
-							hg.FillColor = coin.Coin.Color
-							hg.OutlineColor = coin.Coin.Color
-						end
+					    if not coin:FindFirstChildOfClass("Highlight") then
+					        local hg = Instance.new("Highlight", coin)
+					        hg.FillColor = coin.Coin.Color
+					        hg.OutlineColor = coin.Coin.Color
+					    end
 					else
-						if coin:FindFirstChild("Highlight") then
-							coin.Highlight:Destroy()
-						end
+					    if coin:FindFirstChildOfClass("Highlight") then
+					        coin:FindFirstChildOfClass("Highlight"):Destroy()
+					    end
 					end
 				end
 			end
